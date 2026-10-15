@@ -1,0 +1,8 @@
+google-adk
+chromadb                # para reutilizar su RAG del Lab 6 (con los dos siguientes)
+sentence-transformers   # instala torch (en Mac y Windows ya es la versión solo-CPU)
+pymupdf4llm
+python-dotenv
+mcp
+pandas                  # opcional: para leer las hojas de cálculo del caso
+openpyxl                # opcional: pandas lo usa para abrir .xlsx

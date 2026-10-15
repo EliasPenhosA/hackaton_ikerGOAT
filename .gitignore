@@ -1,0 +1,8 @@
+.venv/
+.venv_respaldo_313/
+__pycache__/
+*.pyc
+.env
+.env.*
+verificar_entorno_backup.py
+.DS_Store
