@@ -27,6 +27,16 @@ Model Context Protocol (MCP)	Exponer o integrar herramientas cuando lo requiera 
 RAG (si el caso lo requiere)	Recuperar información de documentos relevantes para fundamentar respuestas.
 Git y GitHub	Control de versiones y colaboración en equipo.
 
+🧾 ¿Qué hace nuestro agente?
+Es un asistente de conciliación bancaria para el área de contabilidad: ayuda a descubrir de quién es cada depósito que llega al banco sin referencia y a aplicarlo a las facturas correctas, sin que nadie tenga que revisar cientos de movimientos a mano.
+
+Herramienta	Qué hace por ti
+🔍 describir_tabla	Te muestra qué datos guarda la base (columnas y ejemplos) para que el agente sepa dónde buscar.
+🕵️ buscar_facturas_de_movimiento	Hace de detective: toma un depósito sin identificar y sugiere a qué cliente y a qué facturas pertenece. Revisa si esa cuenta ya había pagado antes, si el concepto menciona un folio o un nombre, y si el monto cuadra con una factura o con la suma de varias. Cada candidato llega con su puntaje, su nivel de confianza (alta, media o baja) y la explicación de por qué lo sugiere. Solo propone: no cambia nada.
+✅ cuadrar_pago	Aplica el pago: reparte el depósito entre las facturas, baja sus saldos, las marca como pagadas y deja el movimiento como aplicado. Todo ocurre en un solo paso: o se guarda completo o no se guarda nada. Siempre pide tu aprobación antes de escribir en la base.
+
+Cómo funciona en la práctica: el contador pregunta "¿a quién corresponde el movimiento MB000893?", el agente explica sus sospechas y qué tan fuertes son, y solo si el contador aprueba, el pago se aplica. La IA propone; la persona decide.
+
 
 🧠 Conceptos de inteligencia artificial
 - IA agéntica: un agente que selecciona herramientas para cumplir un objetivo.
