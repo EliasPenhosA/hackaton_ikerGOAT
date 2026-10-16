@@ -17,7 +17,8 @@ Variables de entorno (todas opcionales):
   LA_COSECHA_SECRET        llave para firmar los tokens de aprobación (default: aleatoria por proceso)
 
 Conexión desde ADK (stdio) con aprobación humana real (HITL):
-  from google.adk.tools.mcp_tool.mcp_toolset import McpToolset, StdioConnectionParams
+  from google.adk.tools.mcp_tool import McpToolset
+  from google.adk.tools.mcp_tool.mcp_session_manager import StdioConnectionParams
   from mcp import StdioServerParameters
 
   def pide_aprobacion(token: str = "", **kwargs) -> bool:
