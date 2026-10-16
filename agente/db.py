@@ -16,7 +16,7 @@ AGENT_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = AGENT_DIR.parent
 load_dotenv(AGENT_DIR / ".env")
 
-_ruta = Path(os.getenv("LA_COSECHA_DB", "la_cosecha_practica.db"))
+_ruta = Path(os.getenv("LA_COSECHA_DB", "la_cosecha.db"))
 DB_PATH = _ruta if _ruta.is_absolute() else PROJECT_DIR / _ruta
 
 
@@ -47,5 +47,3 @@ def ejecutar(sql: str, params: tuple = ()) -> int:
 if __name__ == "__main__":
     print(DB_PATH)
     print(consultar("SELECT COUNT(*) AS clientes FROM clientes"))
-    print(consultar("SELECT p.pedido_id, p.fecha, d.sku, pr.descripcion, d.cantidad FROM pedidos p JOIN pedido_detalle d USING(pedido_id) JOIN productos pr USING(sku) WHERE p.cliente_id = 'C10007' ORDER BY p.fecha DESC LIMIT 20;"))
-    print(consultar("SELECT * FROM proveedores"))
